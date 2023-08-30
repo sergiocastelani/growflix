@@ -1,0 +1,17 @@
+body > header {
+  background-image: url(../images/banner-initial.png);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button-red {
+  background-color: rgb(236, 2, 2);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 17px 30px;
+}
+.button-red:hover {
+  background-color: rgb(196, 0, 0);
+  color: white;
+}
