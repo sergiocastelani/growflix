@@ -33,3 +33,7 @@ footer {
   font-weight: 400;
   padding: 25px;
 }
+
+.section-shadowed:hover {
+  background: linear-gradient(148deg, rgba(0,0,0,1) 0%, rgba(56,2,2,1) 35%, rgba(0,0,0,1) 70%);
+}
