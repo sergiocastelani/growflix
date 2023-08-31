@@ -10,6 +10,10 @@ section {
   border-bottom: 5px solid rgb(35 35 35);
 }
 
+footer {
+  color: gray;
+}
+
 .button-red {
   background-color: rgb(236, 2, 2);
   font-size: 1.5rem;
