@@ -37,7 +37,8 @@ function renderVideoCard(parentElement, videoInfo) {
   const videoCardTemplate = document.querySelector('#template-video-card');
   const videoCardElement = videoCardTemplate.content.cloneNode(true);
 
-  videoCardElement.querySelector('img').src = videoInfo.image.replace('maxresdefault', 'sddefault');
+  videoCardElement.querySelector('img').src = videoInfo.image.replace('maxresdefault', 'mqdefault');
+  videoCardElement.querySelector('.video-title').textContent = videoInfo.title;
 
   parentElement.appendChild(videoCardElement);
 }
