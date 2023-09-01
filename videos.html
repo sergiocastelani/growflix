@@ -10,7 +10,8 @@
   <script defer src="./assets/bootstrap-5.3.1/js/bootstrap.bundle.min.js"></script>
 
   <link href="./assets/css/style.css" rel="stylesheet">
-  <script defer src="./assets/scripts/main.js"></script>
+  <link href="./assets/css/videos.css" rel="stylesheet">
+  <script defer src="./assets/scripts/videos.js" type="module"></script>
 </head>
 
 <body data-bs-theme="dark" class="bg-black">
@@ -27,22 +28,12 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Início</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Growcast [episódios]</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Webinar em Flutter</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Jornada UX/UI</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Diversos</a>
-                </li>
+              <ul id="navbar-itens" class="navbar-nav me-auto mb-2 mb-lg-0">
+                <template id="template-nav-item">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Início</a>
+                  </li>
+                </template>
               </ul>
             </div>
           </div>
@@ -57,49 +48,50 @@
   </header>
 
   <main class="container-fluid">
-    <section class="row section-shadowed">
-      <div class="col-12">
-        <div class="container">
-          <div class="row py-5">
-            <div class="col-12 col-md-6 text-center text-md-start">
-              <p class="display-4 fw-bold pt-5">
-                Aproveite na TV.
-              </p>
-              <p class="fs-3">
-                Assista em Smart TVs,<br>
-                PlayStation, Xbox, Chromecast<br>
-                e outros dispositivos.
-              </p>
-            </div>
-            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-              <img src="./assets/images/tela-tv.png" alt="Imagem tv" class="img-fluid">
+    <!-- video category template -->
+    <template id="template-video-category">
+      <section class="row section-shadowed">
+        <div class="col-12">
+          <div class="container">
+            <div class="row py-5 cards-container">
+              <div class="col-12 pb-4 fs-4 fw-bold">
+                <a href="#" class="link">
+                  <span class="category-name">Growcast [sdfsdf]</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <g transform="rotate(-90 8 8)">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+              <!-- video cards go here -->
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </template>
 
-    <section class="row section-shadowed">
-      <div class="col-12">
-        <div class="container">
-          <div class="row py-5">
-            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-              <img src="./assets/images/devices.png" alt="Imagem dispositivos" class="img-fluid">
-            </div>
-            <div class="col-12 col-md-6 text-center text-md-end">
-              <p class="display-4 fw-bold pt-5">
-                Assista quando <br>
-                quiser.
-              </p>
-              <p class="fs-3">
-                Assista no celular, tablet, Smart TV ou <br>
-                notebook sem pagar a mais por isso.
-              </p>
+    <!-- video card template -->
+    <template id="template-video-card">
+      <div class="col-12 col-md-6 col-lg-3 pt-3">
+        <div class="card bg-black border-0">
+          <img src="https://img.youtube.com/vi/ci1eQGPK89o/maxresdefault.jpg" class="card-img-top" alt="Video image">
+          <div class="card-body container-fluid">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-play-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                  <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"></path>
+                </svg>
+              </div>
+              <div class="col-9">
+                Growcast #02 - Como seguir a carreira internacional?
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </template>
 
   </main>
   

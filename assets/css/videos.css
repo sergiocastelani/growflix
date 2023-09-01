@@ -1,0 +1,8 @@
+body > header {
+  background-image: url(https://img.youtube.com/vi/7OWT3lfHYvE/maxresdefault.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+

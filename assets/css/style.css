@@ -41,6 +41,14 @@ footer p:hover {
   background: linear-gradient(148deg, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 35%, rgba(0,0,0,1) 70%);
 }
 
+.link {
+  text-decoration: none;
+  color: white;
+}
+.link:hover {
+  color: orange;
+}
+
 /* ==== Bootstrap overrides */
 
 .accordion-item {
