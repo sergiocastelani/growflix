@@ -43,16 +43,24 @@ function renderNavItem(categoryName) {
 function renderCarousel(categoryInfo) {
   let isFirst = true;
   let items = "";
+  let indicators = "";
+  let counter = 0;
   for(let videoInfo of categoryInfo.videos) {
+    indicators += `
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="${counter}" class="${isFirst ? 'active' : ''}" aria-current="${isFirst ? 'true' : ''}" aria-label="Slide ${counter + 1}"></button>
+    `;
+
     items += `
-    <div class="carousel-item ${isFirst ? 'active' : ''}" data-link="${videoInfo.link}">
-      <img src="${videoInfo.image.replace('mqdefault.jpg','maxresdefault.jpg')}" class="d-block w-100" alt="${videoInfo.title.replace('"', "'")}">
+    <div class="carousel-item h-100 d-flex justify-content-center ${isFirst ? 'active' : ''}" data-link="${videoInfo.link}">
+      <img src="${videoInfo.image.replace('mqdefault.jpg','maxresdefault.jpg')}" class="d-block h-100" alt="${videoInfo.title.replace('"', "'")}">
     </div>
     `;
 
     isFirst = false;
+    ++counter;
   }
 
+  document.querySelector('.carousel-indicators').innerHTML = indicators;
   document.querySelector('.carousel-inner').innerHTML = items;
 }
 

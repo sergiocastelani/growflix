@@ -23,8 +23,9 @@ body > header {
 .carousel-play-button {
   position: absolute;
   z-index: 1;
-  top: 25%;
+  top: 30%;
   left: 10%;
+  width: 25%;
   height: 50%;
   opacity: 0.5;
   cursor: pointer;
@@ -33,6 +34,15 @@ body > header {
 
 .carousel-play-button:hover {
   opacity: 1;
+}
+
+.carousel-indicators {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 25%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0) 100%);
+}
+
+[data-bs-theme=dark] .carousel .carousel-indicators [data-bs-target] {
+  background-color: rgb(255, 153, 0);
 }
 
 .video-card .card-body {
