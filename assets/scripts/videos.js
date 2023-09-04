@@ -5,13 +5,16 @@ function createAnchorName(str) {
   return str.toLowerCase().replace(/[^a-z0-9]/g, '-');
 }
 
+//modal
+const modalElement = document.querySelector('#videoModal');
+const videoIframe = modalElement.querySelector('#videoIframe');
+const modal = new bootstrap.Modal(modalElement, {});
+modalElement.addEventListener('hidden.bs.modal', () => {
+  videoIframe.src = '';
+});
+
 function openVideoModal(videoLink) {
-  const modalElement = document.querySelector('#videoModal');
-  const videoIframe = modalElement.querySelector('#videoIframe');
-
   videoIframe.src = videoLink;
-
-  const modal = new bootstrap.Modal(modalElement, {});
   modal.show();
 }
 
