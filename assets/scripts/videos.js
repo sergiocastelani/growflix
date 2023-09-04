@@ -31,6 +31,22 @@ function renderNavItem(categoryName) {
   document.querySelector('#navbar-itens').appendChild(navItem);
 }
 
+function renderCarousel(categoryInfo) {
+  let isFirst = true;
+  let items = "";
+  for(let videoInfo of categoryInfo.videos) {
+    items += `
+    <div class="carousel-item ${isFirst ? 'active' : ''}">
+      <img src="${videoInfo.image.replace('mqdefault.jpg','maxresdefault.jpg')}" class="d-block w-100" alt="${videoInfo.title.replace('"', "'")}">
+    </div>
+    `;
+
+    isFirst = false;
+  }
+
+  document.querySelector('.carousel-inner').innerHTML = items;
+}
+
 function renderVideoCategory(categoryInfo) {
   const videoCategoryTemplate = document.querySelector('#template-video-category');
   const videoCategoryElement = videoCategoryTemplate.content.cloneNode(true);
@@ -50,7 +66,7 @@ function renderVideoCard(parentElement, videoInfo) {
   const videoCardTemplate = document.querySelector('#template-video-card');
   const videoCardElement = videoCardTemplate.content.cloneNode(true);
 
-  videoCardElement.querySelector('img').src = videoInfo.image.replace('maxresdefault', 'mqdefault');
+  videoCardElement.querySelector('img').src = videoInfo.image;
   videoCardElement.querySelector('.video-title').textContent = videoInfo.title;
 
   videoCardElement.querySelector('.card-body').onclick = () => openVideoModal(videoInfo.link);
@@ -62,5 +78,6 @@ for (let categoryInfo of videos) {
   renderNavItem(categoryInfo.category);
   renderVideoCategory(categoryInfo);
 }
+renderCarousel(videos[0]);
 
 setSectionBackgroundEffects();
