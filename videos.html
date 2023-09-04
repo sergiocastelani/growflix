@@ -17,53 +17,50 @@
 <body data-bs-theme="dark" class="bg-black">
 
   <header class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/logo.svg" alt="Logo Growflix" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Liga/desliga navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="navbar-itens" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <template id="template-nav-item">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Início</a>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="row">
       <div class="col-12">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
-              <img src="./assets/images/logo.svg" alt="Logo Growflix" class="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Liga/desliga navegação">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul id="navbar-itens" class="navbar-nav me-auto mb-2 mb-lg-0">
-                <template id="template-nav-item">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Início</a>
-                  </li>
-                </template>
-              </ul>
-            </div>
-          </div>
-        </nav>
       </div>
     </div>
 
-    <div class="row py-5 justify-content-center">
-      <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="row justify-content-center">
+      <div id="carousel" class="carousel slide carousel-fade p-0" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="..." class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
-              <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
-            </svg>
-          </span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-              <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-            </svg>            
-          </span>
           <span class="visually-hidden">Next</span>
         </button>
+
+        <div class="carousel-play-button" onclick="playCarousel()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="white" class="bi bi-play-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+            <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"></path>
+          </svg>
+        </div>
       </div>
     </div>
   </header>

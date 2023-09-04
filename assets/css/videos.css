@@ -6,9 +6,33 @@ body > header {
   background-attachment: fixed;
 }
 
+.navbar {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.486);
+}
+
 #carousel {
   width: 100%;
-  max-width: 800px;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.carousel-play-button {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 10%;
+  height: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.carousel-play-button:hover {
+  opacity: 1;
 }
 
 .video-card .card-body {

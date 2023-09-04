@@ -5,6 +5,8 @@ function createAnchorName(str) {
   return str.toLowerCase().replace(/[^a-z0-9]/g, '-');
 }
 
+
+
 //modal
 const modalElement = document.querySelector('#videoModal');
 const videoIframe = modalElement.querySelector('#videoIframe');
@@ -16,6 +18,13 @@ modalElement.addEventListener('hidden.bs.modal', () => {
 function openVideoModal(videoLink) {
   videoIframe.src = videoLink;
   modal.show();
+}
+
+window.playCarousel = function () {
+  const item = document.querySelector('.carousel-item.active');
+  if (item) {
+    openVideoModal(item.dataset.link);
+  }
 }
 
 //render functions
@@ -36,7 +45,7 @@ function renderCarousel(categoryInfo) {
   let items = "";
   for(let videoInfo of categoryInfo.videos) {
     items += `
-    <div class="carousel-item ${isFirst ? 'active' : ''}">
+    <div class="carousel-item ${isFirst ? 'active' : ''}" data-link="${videoInfo.link}">
       <img src="${videoInfo.image.replace('mqdefault.jpg','maxresdefault.jpg')}" class="d-block w-100" alt="${videoInfo.title.replace('"', "'")}">
     </div>
     `;
