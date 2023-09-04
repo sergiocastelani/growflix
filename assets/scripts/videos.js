@@ -51,8 +51,11 @@ function renderCarousel(categoryInfo) {
     `;
 
     items += `
-    <div class="carousel-item h-100 d-flex justify-content-center ${isFirst ? 'active' : ''}" data-link="${videoInfo.link}">
-      <img src="${videoInfo.image.replace('mqdefault.jpg','maxresdefault.jpg')}" class="d-block h-100" alt="${videoInfo.title.replace('"', "'")}">
+    <div 
+      class="carousel-item h-100 ${isFirst ? 'active' : ''}" 
+      data-link="${videoInfo.link}"
+      style="background-image: url(${videoInfo.image.replace('mqdefault.jpg','maxresdefault.jpg')});"
+    >
     </div>
     `;
 
