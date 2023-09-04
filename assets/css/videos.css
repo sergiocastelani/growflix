@@ -6,7 +6,15 @@ body > header {
   background-attachment: fixed;
 }
 
-.cards-container {
+.video-card .card-body {
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0);
+}
+.modal-body {
+  padding: 0;
 }
 
 @media (min-width: 992px) {

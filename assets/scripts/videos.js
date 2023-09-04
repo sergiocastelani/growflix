@@ -5,6 +5,16 @@ function createAnchorName(str) {
   return str.toLowerCase().replace(/[^a-z0-9]/g, '-');
 }
 
+function openVideoModal(videoLink) {
+  const modalElement = document.querySelector('#videoModal');
+  const videoIframe = modalElement.querySelector('#videoIframe');
+
+  videoIframe.src = videoLink;
+
+  const modal = new bootstrap.Modal(modalElement, {});
+  modal.show();
+}
+
 //render functions
 
 function renderNavItem(categoryName) {
@@ -39,6 +49,8 @@ function renderVideoCard(parentElement, videoInfo) {
 
   videoCardElement.querySelector('img').src = videoInfo.image.replace('maxresdefault', 'mqdefault');
   videoCardElement.querySelector('.video-title').textContent = videoInfo.title;
+
+  videoCardElement.querySelector('.card-body').onclick = () => openVideoModal(videoInfo.link);
 
   parentElement.appendChild(videoCardElement);
 }

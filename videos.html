@@ -94,7 +94,21 @@
     </template>
 
   </main>
-  
+
+  <!-- Modal -->  
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <iframe class="w-100 h-100" id="videoIframe" src=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="color-gray">
     <div class="container">
       <div class="row pt-5">
