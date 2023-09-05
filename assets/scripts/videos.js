@@ -20,7 +20,7 @@ modalElement.addEventListener('hide.bs.modal', () => {
 function openVideoModal(videoLink) {
   clearTimeout(modalTimer);
   videoIframe.remove();
-  videoIframe.src = "/pre-video.html";
+  videoIframe.src = "./pre-video.html";
   modalElement.querySelector('.modal-body').appendChild(videoIframe);
 
   modalTimer = setTimeout(() => {
