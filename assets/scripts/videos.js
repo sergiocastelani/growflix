@@ -11,12 +11,20 @@ function createAnchorName(str) {
 const modalElement = document.querySelector('#videoModal');
 const videoIframe = modalElement.querySelector('#videoIframe');
 const modal = new bootstrap.Modal(modalElement, {});
-modalElement.addEventListener('hidden.bs.modal', () => {
+let modalTimer;
+modalElement.addEventListener('hide.bs.modal', () => {
+  clearTimeout(modalTimer);
   videoIframe.src = '';
 });
 
 function openVideoModal(videoLink) {
-  videoIframe.src = videoLink;
+  clearTimeout(modalTimer);
+  videoIframe.src = "./pre-video.html"
+
+  modalTimer = setTimeout(() => {
+    videoIframe.src = videoLink;
+  }, 5000);
+
   modal.show();
 }
 
