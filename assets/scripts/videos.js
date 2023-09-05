@@ -14,15 +14,19 @@ const modal = new bootstrap.Modal(modalElement, {});
 let modalTimer;
 modalElement.addEventListener('hide.bs.modal', () => {
   clearTimeout(modalTimer);
-  videoIframe.src = '';
+  videoIframe.remove();
 });
 
 function openVideoModal(videoLink) {
   clearTimeout(modalTimer);
-  videoIframe.src = "./pre-video.html"
+  videoIframe.remove();
+  videoIframe.src = "/pre-video.html";
+  modalElement.querySelector('.modal-body').appendChild(videoIframe);
 
   modalTimer = setTimeout(() => {
+//    videoIframe.remove();
     videoIframe.src = videoLink+"?autoplay=1";
+//    modalElement.querySelector('.modal-body').appendChild(videoIframe);
   }, 5000);
 
   modal.show();
