@@ -22,7 +22,7 @@ function openVideoModal(videoLink) {
   videoIframe.src = "./pre-video.html"
 
   modalTimer = setTimeout(() => {
-    videoIframe.src = videoLink;
+    videoIframe.src = videoLink+"?autoplay=1";
   }, 5000);
 
   modal.show();
