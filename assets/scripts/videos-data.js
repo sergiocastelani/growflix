@@ -133,12 +133,12 @@ const videos = [
         image: 'https://img.youtube.com/vi/cQDQNX6NXYo/mqdefault.jpg'
       },
       {
-        title: 'WEBINAR ANALISTA DE DADOS - com Paulo Marcon da Arezzo&amp;Co',
+        title: 'WEBINAR ANALISTA DE DADOS - com Paulo Marcon da Arezzo & Co',
         link: 'https://www.youtube.com/embed/nKGbolkirBM',
         image: 'https://img.youtube.com/vi/nKGbolkirBM/mqdefault.jpg'
       },
       {
-        title: 'Tecnologia trazendo soluções para a Arezzo &amp; CO | Ricardo Pinho',
+        title: 'Tecnologia trazendo soluções para a Arezzo & CO | Ricardo Pinho',
         link: 'https://www.youtube.com/embed/6sZPsqNjeek',
         image: 'https://img.youtube.com/vi/6sZPsqNjeek/mqdefault.jpg'
       },
